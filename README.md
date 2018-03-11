@@ -25,6 +25,12 @@ Deploying for local usage if you don't want use webpack dev server run `npm/yarn
 ```
 npm run dev-server / yarn run dev-server
 ```
+### Run node server.js
+Before start create a credential and define into the src/js/server.js `line 42 - 43`
+https://console.bluemix.net/docs/services/speech-to-text/getting-started.html#gettingStarted
+```
+node src/js/server.js
+```
 visit the http://localhost:8080/
 ### Build for production
 Deploying everything for production.
