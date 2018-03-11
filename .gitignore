@@ -1,6 +1,4 @@
 .DS_Store
 node_modules
-dist/app.bundle.js
-dist/styles.css
 coverage
 src/js/credentials.js
