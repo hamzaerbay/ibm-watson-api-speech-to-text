@@ -28,6 +28,7 @@ npm run dev-server / yarn run dev-server
 ### Run node server.js
 Before start create a credential and define into the src/js/server.js `line 42 - 43`
 https://console.bluemix.net/docs/services/speech-to-text/getting-started.html#gettingStarted
+Then run node server for speech api communication
 ```
 node src/js/server.js
 ```
