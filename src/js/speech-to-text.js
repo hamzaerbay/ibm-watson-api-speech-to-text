@@ -42,7 +42,7 @@ class SpeechToText extends Component {
             <h2 className="subtitle">
               {this.state.text ? this.state.text : 'Say something!'}
             </h2>
-            {this.state.error && <div>Connection problem</div>}
+            {this.state.error ? <div>Connection problem</div> : null}
 
             <button onClick={this.listenMic} className="button is-primary"><i className="fa fa-microphone" /></button>
           </div>
