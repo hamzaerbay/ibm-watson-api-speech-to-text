@@ -4,7 +4,9 @@ import recognizeMic from 'watson-speech/speech-to-text/recognize-microphone';
 class SpeechToText extends Component {
   constructor() {
     super();
-    this.state = {};
+    this.state = {
+      error: null,
+    };
     this.listenMic = this.listenMic.bind(this);
   }
   listenMic() {
@@ -22,9 +24,11 @@ class SpeechToText extends Component {
           });
         });
         stream.on('error', (err) => {
+          throw new Error(err);
         });
         document.querySelector('#stop').onclick = stream.stop.bind(stream);
       }).catch((error) => {
+        this.setState({ error });
       });
   }
   render() {
@@ -38,6 +42,8 @@ class SpeechToText extends Component {
             <h2 className="subtitle">
               {this.state.text ? this.state.text : 'Say something!'}
             </h2>
+            {this.state.error && <div>Connection problem</div>}
+
             <button onClick={this.listenMic} className="button is-primary"><i className="fa fa-microphone" /></button>
           </div>
         </div>
