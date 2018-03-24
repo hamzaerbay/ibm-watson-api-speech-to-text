@@ -21,10 +21,10 @@ class SpeechToText extends Component {
         stream.on('data', (data) => {
           this.setState({
             text: data.alternatives[0].transcript,
+            error: null,
           });
         });
         stream.on('error', (err) => {
-          throw new Error(err);
         });
         document.querySelector('#stop').onclick = stream.stop.bind(stream);
       }).catch((error) => {
